@@ -10,10 +10,22 @@
 | ----------------- | --------------------- |
 | `Shift + Alt + C` | Insert comment header |
 
+## 0.0.3
+
+- Updated README.md
+
+- Added Icon
+
+- Added show or hide *setting* for **Notifications**.
+- Setting `myheader.showNotifs`: Displays a **Notification** when creating a header and a **Warning** if the header has already been created.
+
+- Added show or hide *setting* for **file name**.
+- Setting `myheader.showFileName`: write **current file name** in the header.
+
 ## 0.0.2
 
-- setting `myheader.showDate`: write today's date in the header.
-- Added show or hide setting for creation date in header.
+- Added show or hide *setting* for **creation date**.
+- Setting `myheader.showDate`: write **today's date** in the header.
 
 ## 0.0.1
 

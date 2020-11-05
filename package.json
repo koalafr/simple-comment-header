@@ -2,14 +2,15 @@
   "name": "simple-comment-header",
   "displayName": "Simple Comment Header",
   "description": "Adds a simple comment header with some useful info to the current file.",
-  "version": "0.0.2",
+  "publisher": "koalafr",
+  "icon": "img/icon.png",
+  "version": "0.0.3",
   "license": "MIT",
   "homepage": "https://github.com/koalafr/simple-comment-header",
   "repository": {
     "type": "git",
     "url": "https://github.com/koalafr/simple-comment-header"
   },
-  "publisher": "koalafr",
   "engines": {
     "vscode": "^1.50.0"
   },
@@ -24,7 +25,7 @@
     "commands": [
       {
         "command": "simple-comment-header.hcom",
-        "title": "Insert Header comment"
+        "title": "Insert Comment Header"
       }
     ],
     "configuration": {
@@ -33,12 +34,22 @@
         "simple-comment-header.userName": {
           "type": "string",
           "default": "User name",
-          "description": "Username used in the header comment."
+          "description": "Username displayed in the header comment."
         },
         "simple-comment-header.showDate": {
           "type": "boolean",
           "default": "true",
-          "description": "Add created date in the header comment."
+          "description": "If enabled, adds creation date in the header comment."
+        },
+        "simple-comment-header.showFileName": {
+          "type": "boolean",
+          "default": "true",
+          "description": "If enabled, add current file name in the header comment."
+        },
+        "simple-comment-header.showNotifs": {
+          "type": "boolean",
+          "default": "true",
+          "description": "If enabled, displays a Notification when creating a header and a Warning if the header has already been created."
         }
       }
     }

@@ -1,8 +1,6 @@
-# My Header
+# Simple Comment Header
 
-# Introduction
-
-This tool writes a simple comment header to the current window with some useful information.
+Simple Comment Header writes a simple comment header to the current window with some useful information.
 
 ![header](img/prev.png)
 
@@ -10,7 +8,11 @@ This tool writes a simple comment header to the current window with some useful 
 
 Writes a comment header containing the user name, the current date and the file name.
 
+Options to show or hide file name and creation date.
+
 It should not insert headers on files starting with comments.
+
+It DOES NOT update headers based on the settings, you must delete the header and run the command again.
 
 **Supports:**
 
@@ -40,14 +42,16 @@ Example:
 
 > `Header Comment` and `hcom` are equivalent.
 
-## Extension Settings
+## Configuration
 
-- `myheader.userName`: user name written in the header.
-- `myheader.showDate`: write today's date in the header.
+- `myheader.userName`: Username displayed in the header comment. **Default: User name**
+- `myheader.showDate`: If enabled, adds creation date. **Default: true**
+- `myheader.showFileName`: If enabled, add current file name. **Default: true**
+- `myheader.showNotifs`: If enabled, displays a _Notification_ when creating a header and a _Warning_ if the header has already been created. **Default: true**
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 ## Release Notes
 

@@ -1,60 +1,84 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
-
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+const CHAR_NEW_LINE = "\n";
+const CHAR_TAB = "\t";
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log(
-    'Congratulations, your extension "simple-comment-header" is now active!'
-  );
-
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with  registerCommand
-  // The commandId parameter must match the command field in package.json
+  console.log("simple-comment-header is active");
   let disposable = vscode.commands.registerCommand(
     "simple-comment-header.hcom",
     function () {
       const editor = vscode.window.activeTextEditor;
-      if (editor) {
-        var userName = vscode.workspace.getConfiguration(
-          "simple-comment-header"
-        ).userName;
-        var currentDate = new Date(Date.now()).toLocaleDateString();
-        var fileName = editor.document.fileName.split("\\").reverse();
-        star_head_comments(editor, userName, currentDate, fileName[0]);
-      }
+      if (editor) starCommentHeader(editor);
     }
   );
-
   context.subscriptions.push(disposable);
 }
 exports.activate = activate;
 
-function star_head_comments(editor, userName, currentDate, fileName) {
+function ShowNotifications() {
+  return vscode.workspace.getConfiguration("simple-comment-header")
+    .ShowNotifications;
+}
+
+function getFileName() {
+  var tmp = vscode.window.activeTextEditor.document.fileName
+    .split("\\")
+    .reverse();
+  return tmp[0];
+}
+
+function getUserName() {
+  return vscode.workspace.getConfiguration("simple-comment-header").userName;
+}
+
+function getCurrentDate() {
+  return new Date(Date.now()).toLocaleDateString();
+}
+
+function starCommentHeader(editor) {
+  /* init */
   var pos = editor.document.positionAt(0);
   var firstLine = editor.document.lineAt(0);
-  console.log(firstLine);
+  var openLine = "/*" + CHAR_NEW_LINE;
+  var userNameLine = "**" + CHAR_TAB + getUserName() + CHAR_NEW_LINE;
+  var DateLine = "";
+  var fileNameLine = "";
+  var closeLine = "*/" + CHAR_NEW_LINE + CHAR_NEW_LINE;
+
+  /* if already comment on first line, don't add a header */
   if (firstLine.text === "/*") {
-    vscode.window.showWarningMessage("Header file already created.");
-  } else {
-    var mydate = "";
-    if (vscode.workspace.getConfiguration("simple-comment-header").showDate) {
-      mydate = "\n** Created " + currentDate;
-    }
-    var headerComment =
-      "/*\n** " + userName + mydate + "\n** " + fileName + "\n*/\n\n";
-    editor.edit((editBuilder) => {
-      editBuilder.insert(pos, headerComment);
-    });
-    vscode.window.showInformationMessage("Header file created for " + fileName);
+    console.log("Header file already created.");
+    /* Show Notifications */
+    if (ShowNotifications())
+      vscode.window.showWarningMessage("Header file already created.");
+    return;
   }
+
+  /* if showDate */
+  if (vscode.workspace.getConfiguration("simple-comment-header").showDate) {
+    DateLine =
+      "**" + CHAR_TAB + "Created" + CHAR_TAB + getCurrentDate() + CHAR_NEW_LINE;
+  }
+  /* if showFileName */
+  if (vscode.workspace.getConfiguration("simple-comment-header").showFileName) {
+    fileNameLine = "**" + CHAR_TAB + getFileName() + CHAR_NEW_LINE;
+  }
+  /* Create header */
+  var headerComment =
+    openLine + userNameLine + DateLine + fileNameLine + closeLine;
+  /* Insert header */
+  editor.edit((editBuilder) => {
+    editBuilder.insert(pos, headerComment);
+  });
+  console.log("Header file created for " + getFileName());
+  /* Show Notifications */
+  if (ShowNotifications())
+    vscode.window.showInformationMessage(
+      "Header file created for " + getFileName()
+    );
 }
 
 // this method is called when your extension is deactivated
