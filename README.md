@@ -4,7 +4,7 @@ Simple Comment Header writes a simple comment header to the current window with 
 
 > \> Insert Comment Header
 
-![Insert Comment Header](img/prev.png)
+![Insert Comment Header](https://github.com/koalafr/simple-comment-header/blob/main/img/prev.png)
 
 ## Features
 
@@ -17,7 +17,7 @@ It should not insert headers on files starting with comments.
 It DOES NOT update headers based on the settings, you must delete the header and run the command again.
 
 Notifications:
-![Notifications](img/notifs.png)
+![Notifications](https://github.com/koalafr/simple-comment-header/blob/main/img/notifs.png)
 
 **Supports:**
 
@@ -43,7 +43,7 @@ _Will not function correctly with other programming language, work in progress_
 
 Example:
 
-![Commands](img/cmd.png)
+![Commands](https://github.com/koalafr/simple-comment-header/blob/main/img/cmd.png)
 
 > `Insert Comment Header` and `comhead` are equivalent.
 
