@@ -18,13 +18,13 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:simple-comment-header.hcom"
+    "onCommand:simple-comment-header.comh"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "simple-comment-header.hcom",
+        "command": "simple-comment-header.comh",
         "title": "Insert Comment Header"
       }
     ],

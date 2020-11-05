@@ -8,7 +8,7 @@ const CHAR_TAB = "\t";
 function activate(context) {
   console.log("simple-comment-header is active");
   let disposable = vscode.commands.registerCommand(
-    "simple-comment-header.hcom",
+    "simple-comment-header.comh",
     function () {
       const editor = vscode.window.activeTextEditor;
       if (editor) starCommentHeader(editor);
@@ -19,8 +19,7 @@ function activate(context) {
 exports.activate = activate;
 
 function ShowNotifications() {
-  return vscode.workspace.getConfiguration("simple-comment-header")
-    .ShowNotifications;
+  return vscode.workspace.getConfiguration("simple-comment-header").showNotifs;
 }
 
 function getFileName() {

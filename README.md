@@ -2,7 +2,9 @@
 
 Simple Comment Header writes a simple comment header to the current window with some useful information.
 
-![header](img/prev.png)
+> \> Insert Comment Header
+
+![Insert Comment Header](img/prev.png)
 
 ## Features
 
@@ -13,6 +15,9 @@ Options to show or hide file name and creation date.
 It should not insert headers on files starting with comments.
 
 It DOES NOT update headers based on the settings, you must delete the header and run the command again.
+
+Notifications:
+![Notifications](img/notifs.png)
 
 **Supports:**
 
@@ -31,16 +36,16 @@ _Will not function correctly with other programming language, work in progress_
 
 ### Command Palette
 
-| Command          | Effect                |
-| ---------------- | --------------------- |
-| `Header Comment` | Insert comment header |
-| `hcom`           | Insert comment header |
+| Command                 | Effect                |
+| ----------------------- | --------------------- |
+| `Insert Comment Header` | Insert Comment Header |
+| `comhead`               | Insert Comment Header |
 
 Example:
 
-![header](img/cmd.png)
+![Commands](img/cmd.png)
 
-> `Header Comment` and `hcom` are equivalent.
+> `Insert Comment Header` and `comhead` are equivalent.
 
 ## Configuration
 
@@ -55,4 +60,4 @@ Example:
 
 ## Release Notes
 
-[See](CHANGELOG.md)
+[ChangeLog](CHANGELOG.md)
