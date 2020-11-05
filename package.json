@@ -2,7 +2,7 @@
   "name": "simple-comment-header",
   "displayName": "Simple Comment Header",
   "description": "Adds a simple comment header with some useful info to the current file.",
-  "publisher": "koalafr",
+  "publisher": "frenchkoala",
   "icon": "img/icon.png",
   "version": "0.0.3",
   "license": "MIT",
