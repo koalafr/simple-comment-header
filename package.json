@@ -1,0 +1,62 @@
+{
+  "name": "simple-comment-header",
+  "displayName": "Simple Comment Header",
+  "description": "Adds a simple comment header with some useful info to the current file.",
+  "version": "0.0.2",
+  "license": "MIT",
+  "homepage": "https://github.com/koalafr/simple-comment-header",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koalafr/simple-comment-header"
+  },
+  "publisher": "koalafr",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:simple-comment-header.hcom"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "simple-comment-header.hcom",
+        "title": "Insert Header comment"
+      }
+    ],
+    "configuration": {
+      "title": "Simple Comment Header",
+      "properties": {
+        "simple-comment-header.userName": {
+          "type": "string",
+          "default": "User name",
+          "description": "Username used in the header comment."
+        },
+        "simple-comment-header.showDate": {
+          "type": "boolean",
+          "default": "true",
+          "description": "Add created date in the header comment."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.50.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.9.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "typescript": "^4.0.2",
+    "vscode-test": "^1.4.0"
+  }
+}
