@@ -11,7 +11,7 @@ function activate(context) {
     "simple-comment-header.comh",
     function () {
       const editor = vscode.window.activeTextEditor;
-      if (editor) starCommentHeader(editor);
+      if (editor) startCommentHeader(editor);
     }
   );
   context.subscriptions.push(disposable);
@@ -37,7 +37,7 @@ function getCurrentDate() {
   return new Date(Date.now()).toLocaleDateString();
 }
 
-function starCommentHeader(editor) {
+function startCommentHeader(editor) {
   /* init */
   var pos = editor.document.positionAt(0);
   var firstLine = editor.document.lineAt(0);
