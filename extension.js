@@ -11,7 +11,8 @@ function activate(context) {
     "simple-comment-header.comh",
     function () {
       const editor = vscode.window.activeTextEditor;
-      if (editor) startCommentHeader(editor);
+      if (editor) return startCommentHeader(editor);
+      return false;
     }
   );
   context.subscriptions.push(disposable);
@@ -53,7 +54,7 @@ function startCommentHeader(editor) {
     /* Show Notifications */
     if (ShowNotifications())
       vscode.window.showWarningMessage("Header file already created.");
-    return;
+    return false;
   }
 
   /* if showDate */
@@ -78,6 +79,7 @@ function startCommentHeader(editor) {
     vscode.window.showInformationMessage(
       "Header file created for " + getFileName()
     );
+    return true;
 }
 
 // this method is called when your extension is deactivated
