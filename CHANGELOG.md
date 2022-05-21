@@ -4,7 +4,9 @@
 
 - More file types -> HTML PHP Python ...
 
-### Shortcuts
+## 0.1.0
+
+- Shortcut
 
 | key               | command               |
 | ----------------- | --------------------- |
