@@ -1,6 +1,9 @@
 # Simple Comment Header
 
-[![Tests](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml/badge.svg)](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml)
+[![Tests](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml/badge.svg)](https://github.com/koalafr/simple-comment-header/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/koalafr/simple-comment-header)](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml)
+[![version](https://img.shields.io/github/package-json/v/koalafr/simple-comment-header)](https://github.com/koalafr/simple-comment-header/releases)
+[![updated](https://img.shields.io/visual-studio-marketplace/last-updated/frenchkoala.simple-comment-header)](https://marketplace.visualstudio.com/items?itemName=frenchkoala.simple-comment-header)
 
 Simple Comment Header writes a simple comment header to the current window with some useful information.
 
@@ -36,6 +39,14 @@ Notifications:
 _Will not function correctly with other programming language, work in progress_
 
 ## Usage
+
+### Keyboard
+
+- Shortcut
+
+| key               | command               |
+| ----------------- | --------------------- |
+| `Shift + Alt + C` | Insert comment header |
 
 ### Command Palette
 
