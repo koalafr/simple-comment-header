@@ -29,6 +29,12 @@
         "title": "Insert Comment Header"
       }
     ],
+    "keybindings": [
+      {
+        "command": "simple-comment-header.comh",
+        "key": "shift+alt+c"
+      }
+    ],
     "configuration": {
       "title": "Simple Comment Header",
       "properties": {
