@@ -17,6 +17,7 @@ It should not insert headers on files starting with comments.
 It DOES NOT update headers based on the settings, you must delete the header and run the command again.
 
 Notifications:
+
 ![Notifications](https://github.com/koalafr/simple-comment-header/raw/main/img/notifs.png)
 
 **Supports:**
@@ -53,6 +54,29 @@ Example:
 - `myheader.showDate`: If enabled, adds creation date. **Default: true**
 - `myheader.showFileName`: If enabled, add current file name. **Default: true**
 - `myheader.showNotifs`: If enabled, displays a _Notification_ when creating a header and a _Warning_ if the header has already been created. **Default: true**
+
+## Testing
+
+### CI
+
+[Automated testing via github actions workflows](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml)
+
+### CLI
+
+- Install nodejs and dependencies
+- `npm install`
+- Run tests
+- `npm run test`
+
+You can use `vsce` to package and test your changes. [vsce doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions)
+
+## Contributing
+
+nocode: Feel free to open an issue to discuss features, requests, questions ...
+
+code: Fork + Issue (why, what) + PR (tested if possible) + Documentation
+
+Thanks !
 
 ## License
 
