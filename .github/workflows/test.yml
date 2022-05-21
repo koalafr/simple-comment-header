@@ -11,8 +11,8 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    # It's ms vscode so it's tested in windows..
+    runs-on: windows-latest
 
     strategy:
       matrix:
