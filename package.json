@@ -4,7 +4,7 @@
   "description": "Adds a simple comment header with some useful info to the current file.",
   "publisher": "frenchkoala",
   "icon": "img/icon.png",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "homepage": "https://github.com/koalafr/simple-comment-header",
   "repository": {
