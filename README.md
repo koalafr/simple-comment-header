@@ -1,5 +1,7 @@
 # Simple Comment Header
 
+[![Tests](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml/badge.svg)](https://github.com/koalafr/simple-comment-header/actions/workflows/test.yml)
+
 Simple Comment Header writes a simple comment header to the current window with some useful information.
 
 > \> Insert Comment Header
